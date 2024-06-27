@@ -19,7 +19,7 @@ const App = () => {
 
   const addTodo = (title, description) => {
     const newTodo = { id: Date.now(), title, description, status: 'New' };
-    setTodos([newTodo, ...todos]);
+    setTodos([...todos, newTodo]);
     handleFormShow();
     setFormValues({ title: '', description: '' });
   };
