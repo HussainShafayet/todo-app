@@ -1,12 +1,16 @@
 import React from 'react';
 import TodoItem from './TodoItem';
+import {FaEllipsisH } from 'react-icons/fa';
 
 const Column = ({ title, todos, moveTodo }) => {
   const filteredTodos = todos.filter(todo => todo.status === title);
 
   return (
     <div className="flex flex-col w-1/3 p-4 border border-gray-300 rounded-lg m-2 shadow-sm">
-      <h2 className="text-xl font-bold mb-4">{title}</h2>
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-lg font-bold">{title}</h2>
+        <FaEllipsisH className="text-gray-400" />
+      </div>
       {filteredTodos.map(todo => (
         <TodoItem key={todo.id} todo={todo} moveTodo={moveTodo} />
       ))}
