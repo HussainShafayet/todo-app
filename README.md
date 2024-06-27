@@ -30,7 +30,7 @@ A Todo List Application built with React.js featuring a Kanban-style interface w
 2. **Install dependencies:**
    ```bash
    npm install
-3. **Start the development server::**
+3. **Start the development server:**
    ```bash
    npm start
 
