@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {FaAlignLeft, FaPaperclip, FaHashtag } from 'react-icons/fa';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 const TodoItem = ({ todo, moveTodo }) => {
   const { id, title, description, status, attachments, tags, dueDate } = todo;
@@ -25,11 +28,7 @@ const TodoItem = ({ todo, moveTodo }) => {
 
   const handleMove = (newStatus) => {
     if (newStatus === 'Ongoing') {
-      const selectedDueDate = prompt("Please enter due date (YYYY-MM-DD):", selectedDate.toISOString().split('T')[0]);
-      if (selectedDueDate) {
-        const newDueDate = new Date(selectedDueDate);
-        moveTodo(id, newStatus, newDueDate);
-      }
+      moveTodo(id, newStatus, selectedDate);
     } else {
       moveTodo(id, newStatus);
     }
@@ -55,7 +54,13 @@ const TodoItem = ({ todo, moveTodo }) => {
       </div>
       {status === 'Ongoing' && <p className="text-xs text-red-500">Due by: {new Date(dueDate).toLocaleDateString()}</p>}
       {showMenu && (
-        <div className="absolute top-0 left-0 mt-10 bg-white border rounded-lg shadow-lg z-10">
+        <div className="absolute top-0 left-0 mt-10 bg-white border rounded-lg shadow-lg z-10 p-4">
+          {getNextStatusOptions().includes('Ongoing') && (
+            <>
+              <label className="block mb-2 text-sm font-bold text-gray-700">Select Due Date for OnGoing:</label>
+              <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} className="mb-4 p-2 border rounded" />
+            </>
+          )}
           {getNextStatusOptions().map(option => (
             <div key={option} className="p-2 cursor-pointer hover:bg-gray-100" onClick={() => handleMove(option)}>
               Move to {option}
