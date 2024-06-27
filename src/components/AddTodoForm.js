@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const AddTodoForm = ({ addTodo, formValues }) => {
     const [title, setTitle] = useState(formValues.title);
     const [description, setDescription] = useState(formValues.description);
+    const titleInputRef = useRef(null);
   
     useEffect(() => {
       setTitle(formValues.title);
@@ -15,6 +16,9 @@ const AddTodoForm = ({ addTodo, formValues }) => {
       setTitle('');
       setDescription('');
     };
+    useEffect(() => {
+        titleInputRef.current.focus();
+    }, []);
   
     return (
       <form className="flex flex-col mb-6 w-full max-w-6xl" onSubmit={handleSubmit}>
@@ -25,6 +29,7 @@ const AddTodoForm = ({ addTodo, formValues }) => {
           onChange={(e) => setTitle(e.target.value)}
           required
           className="mb-2 p-2 border rounded-lg"
+          ref={titleInputRef}
         />
         <textarea
           placeholder="Description"

@@ -25,7 +25,8 @@ const App = () => {
   };
 
   const copyLastCardValues = (title) => {
-    const lastTodo = todos.filter(todo => todo.status === title)[0];
+    let lastTodo = todos.filter(todo => todo.status === title);
+    lastTodo = lastTodo[lastTodo.length-1];
     if (lastTodo) {
       setFormValues({ title: lastTodo.title, description: lastTodo.description });
     }else{
