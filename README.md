@@ -25,7 +25,7 @@ A Todo List Application built with React.js featuring a Kanban-style interface w
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/todo-app.git
+   git clone https://github.com/hussainshafayet/todo-app.git
    cd todo-app
 2. **Install dependencies:**
    ```bash
