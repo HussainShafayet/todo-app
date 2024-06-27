@@ -42,7 +42,7 @@ const TodoItem = ({ todo, moveTodo }) => {
   };
 
   return (
-    <div className={`relative p-4 mb-2 border-l-4 rounded-lg bg-white shadow-sm ${getStatusColor()}`} onContextMenu={handleRightClick}> 
+    <div className={`relative p-4 mb-2 border-l-4 rounded-lg bg-white shadow-md ${getStatusColor()}`} onContextMenu={handleRightClick}> 
       <h2 className="text-lg font-bold">{title}</h2>
       <p className="text-sm text-gray-500">{description}</p>
       <div className="flex items-center mt-2 text-gray-500">

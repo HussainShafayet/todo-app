@@ -6,7 +6,7 @@ const Column = ({ title, todos, moveTodo, handleFormShow, copyLastCardValues }) 
   const filteredTodos = todos.filter(todo => todo.status === title);
 
   return (
-    <div className="flex flex-col w-full md:w-1/3 p-4 border border-gray-300 rounded-lg m-2 shadow-sm">
+    <div className="flex flex-col w-full md:w-1/3 p-4 border border-gray-300 rounded-lg m-2 shadow-md">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold">{title}</h2>
         <FaEllipsisH className="text-gray-400" />
