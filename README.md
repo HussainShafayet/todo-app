@@ -46,5 +46,5 @@ A Todo List Application built with React.js featuring a Kanban-style interface w
 ## License
 **This project is licensed under the MIT License. See the LICENSE file for details.**
    ```bash
-   Feel free to replace placeholders like `https://github.com/yourusername/todo-app.git` with actual URLs relevant to your project. This README file provides a comprehensive guide to your Todo App project, including features, installation steps, usage instructions, and code overview. You can copy this markdown code into your `README.md` file.
+   Feel free to replace placeholders like `https://github.com/hussainshafayet/todo-app.git` with actual URLs relevant to your project. This README file provides a comprehensive guide to your Todo App project, including features, installation steps, usage instructions, and code overview. You can copy this markdown code into your `README.md` file.
 
