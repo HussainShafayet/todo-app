@@ -33,3 +33,18 @@ A Todo List Application built with React.js featuring a Kanban-style interface w
 3. **Start the development server::**
    ```bash
    npm start
+
+## Contributions
+
+- **Contributions are welcome! Please follow these steps to contribute:**
+  - Fork the repository.
+  - Create a new branch for your feature or bug fix.
+  - Commit your changes.
+  - Push your branch and open a pull request.
+- **Please ensure your code adheres to the project's coding standards and includes appropriate tests.**
+
+## License
+**This project is licensed under the MIT License. See the LICENSE file for details.**
+   ```bash
+   Feel free to replace placeholders like `https://github.com/yourusername/todo-app.git` with actual URLs relevant to your project. This README file provides a comprehensive guide to your Todo App project, including features, installation steps, usage instructions, and code overview. You can copy this markdown code into your `README.md` file.
+
