@@ -10,14 +10,16 @@ const App = () => {
     { id: 3, title: "Sales Manager Panel", description: "Description for Sales Manager Panel", status: 'New', attachments: 1, tags: 41 },
     { id: 4, title: "Customer Support & Operations", description: "Description for Customer Support & Operations", status: 'New', attachments: 0, tags: 43 },
     { id: 5, title: "Shop Panel Test Cases", description: "Description for Shop Panel Test Cases", status: 'New', attachments: 1, tags: 13 },
-    { id: 6, title: "Questions", description: "Description for Questions", status: 'Ongoing', attachments: 0, tags: 1115, dueDate: new Date(Date.now() + 86400000) } // Example due date
+    { id: 6, title: "Questions", description: "Description for Questions", status: 'Ongoing', attachments: 0, tags: 1115, dueDate: new Date(Date.now() + 86400000) } 
   ];
 
   const [todos, setTodos] = useState(initialTodos);
+  const [showAddTodoForm, setShowAddTodoForm] = useState(false);
 
   const addTodo = (title, description) => {
     const newTodo = { id: Date.now(), title, description, status: 'New' };
     setTodos([newTodo, ...todos]);
+    handleFormShow();
   };
 
   const moveTodo = (id, newStatus, dueDate = null) => {
@@ -26,13 +28,17 @@ const App = () => {
     ));
   };
 
+  const handleFormShow = ()=>{
+    setShowAddTodoForm(!showAddTodoForm)
+  }
+
   return (
     <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <AddTodoForm addTodo={addTodo} />
+      {showAddTodoForm && <AddTodoForm addTodo={addTodo} /> }
       <div className="flex justify-between w-full max-w-6xl">
-        <Column title="New" todos={todos} moveTodo={moveTodo} />
-        <Column title="Ongoing" todos={todos} moveTodo={moveTodo} />
-        <Column title="Done" todos={todos} moveTodo={moveTodo} />
+        <Column title="New" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow}/>
+        <Column title="Ongoing" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow} />
+        <Column title="Done" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow}/>
       </div>
     </div>
   );

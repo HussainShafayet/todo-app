@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 import {FaEllipsisH } from 'react-icons/fa';
 
-const Column = ({ title, todos, moveTodo }) => {
+const Column = ({ title, todos, moveTodo, handleFormShow }) => {
   const filteredTodos = todos.filter(todo => todo.status === title);
 
   return (
@@ -14,7 +14,7 @@ const Column = ({ title, todos, moveTodo }) => {
       {filteredTodos.map(todo => (
         <TodoItem key={todo.id} todo={todo} moveTodo={moveTodo} />
       ))}
-      {title === 'New' && <div className="text-blue-500 cursor-pointer mt-4">+ Add a card</div>}
+      {title === 'New' && <div className="text-blue-500 cursor-pointer mt-4"  onClick={() => handleFormShow()}>+ Add a card</div>}
     </div>
   );
 };
