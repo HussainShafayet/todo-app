@@ -33,9 +33,9 @@ const App = () => {
   }
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-col items-center p-4 bg-gray-100 min-h-screen">
       {showAddTodoForm && <AddTodoForm addTodo={addTodo} /> }
-      <div className="flex justify-between w-full max-w-6xl">
+      <div className="flex flex-col md:flex-row justify-between w-full max-w-6xl">
         <Column title="New" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow}/>
         <Column title="Ongoing" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow} />
         <Column title="Done" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow}/>
