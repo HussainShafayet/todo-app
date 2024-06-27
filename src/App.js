@@ -15,11 +15,23 @@ const App = () => {
 
   const [todos, setTodos] = useState(initialTodos);
   const [showAddTodoForm, setShowAddTodoForm] = useState(false);
+  const [formValues, setFormValues] = useState({ title: '', description: '' });
 
   const addTodo = (title, description) => {
     const newTodo = { id: Date.now(), title, description, status: 'New' };
     setTodos([newTodo, ...todos]);
     handleFormShow();
+    setFormValues({ title: '', description: '' });
+  };
+
+  const copyLastCardValues = (title) => {
+    const lastTodo = todos.filter(todo => todo.status === title)[0];
+    if (lastTodo) {
+      setFormValues({ title: lastTodo.title, description: lastTodo.description });
+    }else{
+      setFormValues({ title: '', description: '' });
+    }
+    setShowAddTodoForm(true);
   };
 
   const moveTodo = (id, newStatus, dueDate = null) => {
@@ -28,17 +40,18 @@ const App = () => {
     ));
   };
 
-  const handleFormShow = ()=>{
-    setShowAddTodoForm(!showAddTodoForm)
+  const handleFormShow = (lastItem = null)=>{
+    setShowAddTodoForm(!showAddTodoForm);
+
   }
 
   return (
     <div className="flex flex-col items-center p-4 bg-gray-100 min-h-screen">
-      {showAddTodoForm && <AddTodoForm addTodo={addTodo} /> }
+      {showAddTodoForm && <AddTodoForm addTodo={addTodo} formValues={formValues} /> }
       <div className="flex flex-col md:flex-row justify-between w-full max-w-6xl">
-        <Column title="New" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow}/>
-        <Column title="Ongoing" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow} />
-        <Column title="Done" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow}/>
+        <Column title="New" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow} copyLastCardValues={copyLastCardValues} />
+        <Column title="Ongoing" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow} copyLastCardValues={copyLastCardValues} />
+        <Column title="Done" todos={todos} moveTodo={moveTodo} handleFormShow={handleFormShow} copyLastCardValues={copyLastCardValues}/>
       </div>
     </div>
   );

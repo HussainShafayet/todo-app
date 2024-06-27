@@ -1,8 +1,8 @@
 import React from 'react';
 import TodoItem from './TodoItem';
-import {FaEllipsisH } from 'react-icons/fa';
+import {FaEllipsisH, FaCopy } from 'react-icons/fa';
 
-const Column = ({ title, todos, moveTodo, handleFormShow }) => {
+const Column = ({ title, todos, moveTodo, handleFormShow, copyLastCardValues }) => {
   const filteredTodos = todos.filter(todo => todo.status === title);
 
   return (
@@ -14,7 +14,11 @@ const Column = ({ title, todos, moveTodo, handleFormShow }) => {
       {filteredTodos.map(todo => (
         <TodoItem key={todo.id} todo={todo} moveTodo={moveTodo} />
       ))}
-      {title === 'New' && <div className="text-blue-500 cursor-pointer mt-4"  onClick={() => handleFormShow()}>+ Add a card</div>}
+      <div className="flex justify-between items-center mb-4">
+        <div className="text-blue-500 cursor-pointer"  onClick={() => handleFormShow()}>+ Add a card</div>
+        <FaCopy className="text-gray-400 cursor-pointer" onClick={() => copyLastCardValues(title)} />
+      </div>
+      
     </div>
   );
 };
