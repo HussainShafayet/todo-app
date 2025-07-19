@@ -1,50 +1,94 @@
-# Todo App
+# Todo App 📝
 
-A Todo List Application built with React.js featuring a Kanban-style interface with three distinct columns: New, Ongoing, and Done. The app allows users to manage tasks through different stages of completion with added functionalities like context menus, date pickers, and form pre-filling.
+A simple and minimalistic Todo App built with **React**.  
+It helps you to add, delete, and manage daily tasks with a clean and responsive UI.  
+This app uses **TailwindCSS** for styling, **React Icons** for icons, and **React Datepicker** for date input.  
+Deployed via **GitHub Pages**.
 
-## Features
+## 🚀 Live Demo
 
-- **Three Columns for Task Management:**
-  - **New:** Column for newly created tasks.
-  - **Ongoing:** Column for tasks currently being worked on.
-  - **Done:** Column for completed tasks.
-- **Task Creation:** Users can add new tasks to the New column with a title and description.
-- **Task Management:** Users can move tasks between columns using a right-click context menu (desktop) or long-press (mobile).
-- **Due Date:** For Ongoing tasks, users can set a due date using a date picker. Alerts are shown if tasks are overdue.
-- **Responsive Design:** The app is responsive and works well on different screen sizes.
-- **Form Pre-filling:** Users can pre-fill the task creation form with the last task's values using a copy icon.
+[👉 Click here to view the live app](https://HussainShafayet.github.io/todo-app/)
 
-## Technologies Used
+---
 
-- React.js
-- Tailwind CSS
-- React Icons
-- React DatePicker
+## ✨ Features
 
-## Installation
+- ✅ Add new tasks  
+- ✅ Mark tasks as completed  
+- ✅ Delete tasks  
+- ✅ Date picker integration (via `react-datepicker`)  
+- ✅ Responsive design with TailwindCSS  
+- ✅ Deployed with GitHub Pages  
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/hussainshafayet/todo-app.git
-   cd todo-app
-2. **Install dependencies:**
-   ```bash
-   npm install
-3. **Start the development server:**
-   ```bash
-   npm start
+---
 
-## Contributions
+## 📂 Project Structure
+```plaintext
+todo-app/
+├── public/
+├── src/
+│ ├── components/
+│ ├── App.js
+│ ├── index.js
+│ └── ...other files
+├── package.json
+└── tailwind.config.js
+```
 
-- **Contributions are welcome! Please follow these steps to contribute:**
-  - Fork the repository.
-  - Create a new branch for your feature or bug fix.
-  - Commit your changes.
-  - Push your branch and open a pull request.
-- **Please ensure your code adheres to the project's coding standards and includes appropriate tests.**
 
-## License
-**This project is licensed under the MIT License. See the LICENSE file for details.**
-   ```bash
-   Feel free to replace placeholders like `https://github.com/hussainshafayet/todo-app.git` with actual URLs relevant to your project. This README file provides a comprehensive guide to your Todo App project, including features, installation steps, usage instructions, and code overview. You can copy this markdown code into your `README.md` file.
+---
+
+## 🛠️ Tech Stack
+
+- React ^18.3.1
+- React DOM ^18.3.1
+- React Datepicker ^7.2.0
+- React Icons ^5.2.1
+- Tailwind CSS ^3.4.4
+- gh-pages ^6.1.1
+
+---
+
+## 📥 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/HussainShafayet/todo-app.git
+cd todo-app
+```
+### 1. Install Dependencies
+```bash
+npm install
+```
+### 2. Start the Development Server
+```bash
+npm start
+```
+## 🏗️ Build
+```bash
+npm run build
+```
+
+## 🤝 Contributing
+
+- Fork the repo
+-  Create a new branch: git checkout -b feature-name
+- Commit changes: git commit -m "Add feature"
+- Push your branch: git push origin feature-name
+- Open a Pull Request 🚀
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
+
+## ✍️ Author
+Created and maintained by Shafayet Hussain.  
+Feel free to connect or reach out for feedback and collaboration!
+
+
 
